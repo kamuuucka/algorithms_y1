@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.Threading;
 using GXPEngine;
 using GXPEngine.OpenGL;
 
@@ -72,8 +73,8 @@ class AlgorithmsAssignment : Game
 		//TODO: Study the SampleDungeon class and try it out below
 		//TODO: Comment out SampleDungeon below, implement a SufficientDungeon class and uncomment it below
 
-		_dungeon = new SampleDungeon(size);
-		//_dungeon = new SufficientDungeon(size);
+		//_dungeon = new SampleDungeon(size);
+		_dungeon = new SufficientDungeon(size);
 
 		/////////////////////////////////
 		//Assignment 1.2 Good (optional)
@@ -96,7 +97,8 @@ class AlgorithmsAssignment : Game
 			//assign the SCALE we talked about above, so that it no longer looks like a tinietiny stamp:
 			_dungeon.scale = SCALE;
 			//Tell the dungeon to generate rooms and doors with the given MIN_ROOM_SIZE
-			_dungeon.Generate(MIN_ROOM_SIZE);
+			//_dungeon.Generate(MIN_ROOM_SIZE);
+			new Thread(_dungeon.Generate).Start();
 		}
 
 		/////////////////////////////////////////////////////////////////////////////////////////

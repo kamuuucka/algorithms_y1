@@ -53,6 +53,12 @@ abstract class Dungeon : Canvas
 		System.Console.WriteLine(this.GetType().Name + " created.");
 	}
 
+	//Needed to call the function below
+	public virtual void Generate()
+    {
+		Generate(7);
+    }
+
 	/**
 	 * Clears all rooms and doors, calls generate (note the lower case),
 	 * and visualizes the result by drawing on the canvas.

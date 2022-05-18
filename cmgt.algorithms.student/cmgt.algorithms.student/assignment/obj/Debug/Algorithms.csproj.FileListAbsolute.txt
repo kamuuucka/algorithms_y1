@@ -12,3 +12,11 @@ D:\data\saxion\courses_cmgt\1_4_algorithms\102_assignments\cmgt.algorithms.stude
 D:\data\saxion\courses_cmgt\1_4_algorithms\102_assignments\cmgt.algorithms.student\assignment\obj\Debug\Algorithms.csproj.CoreCompileInputs.cache
 D:\data\saxion\courses_cmgt\1_4_algorithms\102_assignments\cmgt.algorithms.student\assignment\obj\Debug\dcg.exe
 D:\data\saxion\courses_cmgt\1_4_algorithms\102_assignments\cmgt.algorithms.student\assignment\obj\Debug\dcg.pdb
+E:\algorithms_y1\cmgt.algorithms.student\cmgt.algorithms.student\assignment\bin\Debug\dcg.exe.config
+E:\algorithms_y1\cmgt.algorithms.student\cmgt.algorithms.student\assignment\bin\Debug\dcg.exe
+E:\algorithms_y1\cmgt.algorithms.student\cmgt.algorithms.student\assignment\bin\Debug\dcg.pdb
+E:\algorithms_y1\cmgt.algorithms.student\cmgt.algorithms.student\assignment\obj\Debug\Algorithms.csproj.AssemblyReference.cache
+E:\algorithms_y1\cmgt.algorithms.student\cmgt.algorithms.student\assignment\obj\Debug\Algorithms.csproj.SuggestedBindingRedirects.cache
+E:\algorithms_y1\cmgt.algorithms.student\cmgt.algorithms.student\assignment\obj\Debug\Algorithms.csproj.CoreCompileInputs.cache
+E:\algorithms_y1\cmgt.algorithms.student\cmgt.algorithms.student\assignment\obj\Debug\dcg.exe
+E:\algorithms_y1\cmgt.algorithms.student\cmgt.algorithms.student\assignment\obj\Debug\dcg.pdb
