@@ -6,12 +6,10 @@
 class Room
 {
 	public Rectangle area;
-	public int direction;
 
-	public Room (Rectangle pArea, int pDirection = 0)
+	public Room (Rectangle pArea)
 	{
 		area = pArea;
-		direction = pDirection;
 
 	}
 
@@ -21,7 +19,7 @@ class Room
 
 	public string toString()
     {
-		return "X: " + area.X + " Y: " + area.Y + " W: " + area.Width + " H: " + area.Height + " D:" + direction;
+		return "X: " + area.X + " Y: " + area.Y + " W: " + area.Width + " H: " + area.Height;
     }
 
 }
