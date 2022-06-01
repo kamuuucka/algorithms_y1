@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 
 /**
  * This class represents (the data for) a Room, at this moment only a rectangle in the dungeon.
@@ -6,6 +7,7 @@
 class Room
 {
 	public Rectangle area;
+	public List<Door> doors = new List<Door>();
 
 	public Room (Rectangle pArea)
 	{

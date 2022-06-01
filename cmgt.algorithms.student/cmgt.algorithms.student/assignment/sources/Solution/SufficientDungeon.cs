@@ -129,11 +129,6 @@ class SufficientDungeon : Dungeon
             //    roomListDoor2.Add(rooms[i]);
             //}
 
-            bool doorLeft = false;
-            bool doorRight = false;
-            bool doorTop = false;
-            bool doorBottom = false;
-
 
             for (int j = i + 1; j < roomListDoor.Count; j++)
             {
@@ -176,78 +171,18 @@ class SufficientDungeon : Dungeon
                        // Console.WriteLine("Door spawned");
                     }
                 }
-
-
-
-                //if (roomToCheck.area.Top == roomToCompare.area.Bottom - 1 && !doorTop)
-                //{
-                //    //Console.WriteLine("There is room above me!");
-                //    //drawRoom(roomToCheck, new Pen(Color.FromArgb(128, Color.Red)));
-                //    //doors.Add(new Door(new Point(roomToCheck.area.X + roomToCheck.area.Width / 2, roomToCheck.area.Top)));
-                //    //doorList.Add(new Door(new Point(roomToCheck.area.X + roomToCheck.area.Width / 2, roomToCheck.area.Top)));
-
-                //    doorTop = true;
-                //    collidingWithRooms++;
-                //}
-                //else
-                //{
-                //    //Console.WriteLine("No room above me");
-                //}
-
-                //if (roomToCheck.area.Bottom == roomToCompare.area.Top + 1 && !doorBottom)
-                //{
-                //    //Console.WriteLine("There is room below me!");
-                //    //drawRoom(roomToCheck, new Pen(Color.FromArgb(128, Color.Yellow)));
-                //    //doors.Add(new Door(new Point(roomToCheck.area.X + roomToCheck.area.Width / 2, roomToCheck.area.Bottom-1)));
-                //    //doorList.Add(new Door(new Point(roomToCheck.area.X + roomToCheck.area.Width / 2, roomToCheck.area.Bottom - 1)));
-                //    doorBottom = true;
-                //    collidingWithRooms++;
-                //}
-                //else
-                //{
-                //    //Console.WriteLine("No room below me");
-                //}
-
-                //if (roomToCheck.area.Left == roomToCompare.area.Right - 1 && !doorLeft)
-                //{
-                //    //Console.WriteLine("There is room on the left!");
-                //    //drawRoom(roomToCheck, new Pen(Color.FromArgb(128, Color.Lime)));
-                //    //doors.Add(new Door(new Point(roomToCheck.area.Left, roomToCheck.area.Y + roomToCheck.area.Height/2)));
-                //    //doorList.Add(new Door(new Point(roomToCheck.area.Left, roomToCheck.area.Y + roomToCheck.area.Height / 2)));
-                //    doorLeft = true;
-                //    collidingWithRooms++;
-                //}
-                //else
-                //{
-                //    //Console.WriteLine("There are no rooms on the left :(");
-                //}
-
-                //if (roomToCheck.area.Right == roomToCompare.area.Left + 1 && !doorRight)
-                //{
-                //    //Console.WriteLine("There is room on the left!");
-                //    //drawRoom(roomToCheck, new Pen(Color.FromArgb(128, Color.Blue)));
-                //    //doors.Add(new Door(new Point(roomToCheck.area.Right-1, roomToCheck.area.Y + roomToCheck.area.Height / 2)));
-                //    //doorList.Add(new Door(new Point(roomToCheck.area.Right - 1, roomToCheck.area.Y + roomToCheck.area.Height / 2)));
-                //    doorRight = true;
-                //    collidingWithRooms++;
-                //}
-                //else
-                //{
-                //    //Console.WriteLine("There are no rooms on the left :(");
-                //}
-
-
-
             }
 
-            //Console.WriteLine("ROOM: " + roomToCheck.toString() + " Colliding rooms: " + collidingWithRooms);
 
             //roomListDoor.Remove(roomToCheck);
 
         }
         drawDoors(doors, Pens.Lime);
 
-
+        foreach(Door door in doors)
+        {
+            Console.WriteLine(door.toString());
+        }
 
     }
 
