@@ -154,6 +154,7 @@ class SufficientDungeon : Dungeon
                         {
                             randomPoint = random.Next(start+1, end-1);
                             doors.Add(new Door(new Point(randomPoint, rect.Y)));
+                           // roomToCheck.doorsInRoom.Add(new Door(new Point(randomPoint, rect.Y)));
                         }
                         //Console.WriteLine("Door spawned");
                     }
@@ -167,6 +168,7 @@ class SufficientDungeon : Dungeon
                         {
                             randomPoint = random.Next(start + 1, end - 1);
                             doors.Add(new Door(new Point(rect.X, randomPoint)));
+                           // roomToCheck.doorsInRoom.Add(new Door(new Point(rect.X, randomPoint)));
                         }
                        // Console.WriteLine("Door spawned");
                     }
@@ -179,9 +181,26 @@ class SufficientDungeon : Dungeon
         }
         drawDoors(doors, Pens.Lime);
 
-        foreach(Door door in doors)
+        foreach (Door door in doors)
         {
             Console.WriteLine(door.toString());
+        }
+
+        foreach (Room room in rooms)
+        {
+            Console.WriteLine(room.toString());
+
+            foreach (Door door in doors)
+            {
+                room.doorsInRoom.Add(door);
+            }
+            room.checkDoors();
+            foreach (Door door in room.doorsInRoom)
+            {
+                door.toString();
+            }
+
+            drawRoom(room, Pens.Black, room.colourDoors());
         }
 
     }
