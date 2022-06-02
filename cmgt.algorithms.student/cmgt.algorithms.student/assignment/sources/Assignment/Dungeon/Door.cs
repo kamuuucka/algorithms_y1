@@ -17,9 +17,11 @@ class Door
 	//Again, whether you need flags like this depends on how you implement the algorithm, maybe you need other flags
 	public bool horizontal = false;
 
-	public Door(Point pLocation)
+	public Door(Point pLocation, Room roomA, Room roomB)
 	{
 		location = pLocation;
+		this.roomA = roomA;
+		this.roomB = roomB;
 	}
 
 	//TODO: Implement a toString method for debugging
@@ -28,7 +30,7 @@ class Door
 
 	public string toString()
     {
-		return "X: " + location.X + " Y: " + location.Y;
+		return "X: " + location.X + " Y: " + location.Y+  " RoomA: " + roomA.toString() + " RoomB: " + roomB.toString();
     }
 }
 

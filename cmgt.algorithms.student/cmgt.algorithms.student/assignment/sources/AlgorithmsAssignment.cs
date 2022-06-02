@@ -97,8 +97,8 @@ class AlgorithmsAssignment : Game
 			//assign the SCALE we talked about above, so that it no longer looks like a tinietiny stamp:
 			_dungeon.scale = SCALE;
 			//Tell the dungeon to generate rooms and doors with the given MIN_ROOM_SIZE
-			//_dungeon.Generate(MIN_ROOM_SIZE);
-			new Thread(_dungeon.Generate).Start();
+			_dungeon.Generate(MIN_ROOM_SIZE);
+			//new Thread(_dungeon.Generate).Start();
 		}
 
 		/////////////////////////////////////////////////////////////////////////////////////////
@@ -115,6 +115,7 @@ class AlgorithmsAssignment : Game
 		//TODO: Comment out the SampleDungeonNodeGraph again, implement a HighLevelDungeonNodeGraph class and uncomment it below
 
 		//_graph = new SampleDungeonNodeGraph(_dungeon);
+		_graph = new SufficientDungeonNodeGraph(_dungeon);
 		//_graph = new HighLevelDungeonNodeGraph(_dungeon);
 		//_graph = new LowLevelDungeonNodeGraph(_dungeon);
 
