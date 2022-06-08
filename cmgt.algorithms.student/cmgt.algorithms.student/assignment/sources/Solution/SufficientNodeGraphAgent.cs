@@ -10,6 +10,7 @@ class OnGraphWayPointAgent : NodeGraphAgent
 	//Current target to move towards
 	private Node _target = null;
 	private List<Node> targetList = new List<Node>();
+	int i = 0;
 
 	public OnGraphWayPointAgent(NodeGraph pNodeGraph) : base(pNodeGraph)
 	{
@@ -33,25 +34,37 @@ class OnGraphWayPointAgent : NodeGraphAgent
 
 	protected override void Update()
 	{
-		while (targetList.Count != 0)
+		
+		if (targetList.Count > 0)
         {
-			Node target = targetList[targetList.Count - 1];
-			targetList.Remove(target);
+			MoveToTarget(targetList[i]);
+		}
+		
 
-			if (target == null) return;
+        ////no target? Don't walk
+        //if (_target == null) return;
 
-			if (moveTowardsNode(target))
-            {
-				target = null;
-            }
+        ////Move towards the target node, if we reached it, clear the target
+        //if (moveTowardsNode(_target))
+        //{
+        //	_target = null;
+        //}
+    }
+
+	private void MoveToTarget(Node target)
+    {
+
+		if (target == null)
+		{
+			i++;
+			return;
+			
+		}
+
+
+        if (moveTowardsNode(target))
+        {
+            target = null;
         }
-		////no target? Don't walk
-		//if (_target == null) return;
-
-		////Move towards the target node, if we reached it, clear the target
-		//if (moveTowardsNode(_target))
-		//{
-		//	_target = null;
-		//}
-	}
+    }
 }

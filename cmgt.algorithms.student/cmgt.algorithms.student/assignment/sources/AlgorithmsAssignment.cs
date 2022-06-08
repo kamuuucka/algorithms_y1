@@ -74,7 +74,7 @@ class AlgorithmsAssignment : Game
 		//TODO: Comment out SampleDungeon below, implement a SufficientDungeon class and uncomment it below
 
 		//_dungeon = new SampleDungeon(size);
-		_dungeon = new SufficientDungeon(size);
+		_dungeon = new GoodDungeon(size);
 
 		/////////////////////////////////
 		//Assignment 1.2 Good (optional)
@@ -205,6 +205,8 @@ class AlgorithmsAssignment : Game
 		//The end!
 		////
 	}
+
+	
 }
 
 
