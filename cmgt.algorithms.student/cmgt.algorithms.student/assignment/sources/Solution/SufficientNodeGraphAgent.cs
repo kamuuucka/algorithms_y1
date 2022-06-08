@@ -56,7 +56,6 @@ class OnGraphWayPointAgent : NodeGraphAgent
 
 		if (target == null)
 		{
-			i++;
 			return;
 			
 		}
@@ -64,7 +63,7 @@ class OnGraphWayPointAgent : NodeGraphAgent
 
         if (moveTowardsNode(target))
         {
-            target = null;
+			i++;
         }
     }
 }
