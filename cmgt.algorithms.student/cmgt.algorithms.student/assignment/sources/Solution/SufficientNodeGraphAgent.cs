@@ -1,4 +1,5 @@
 ﻿using GXPEngine;
+using System;
 using System.Collections.Generic;
 
 /**
@@ -11,6 +12,7 @@ class OnGraphWayPointAgent : NodeGraphAgent
 	private Node _target = null;
 	private List<Node> targetList = new List<Node>();
 	int i = 0;
+	private Node startNode;
 
 	public OnGraphWayPointAgent(NodeGraph pNodeGraph) : base(pNodeGraph)
 	{
@@ -19,7 +21,8 @@ class OnGraphWayPointAgent : NodeGraphAgent
 		//position ourselves on a random node
 		if (pNodeGraph.nodes.Count > 0)
 		{
-			jumpToNode(pNodeGraph.nodes[Utils.Random(0, pNodeGraph.nodes.Count)]);
+			startNode = pNodeGraph.nodes[Utils.Random(0, pNodeGraph.nodes.Count)];
+			jumpToNode(startNode);
 		}
 
 		//listen to nodeclicks
@@ -29,7 +32,20 @@ class OnGraphWayPointAgent : NodeGraphAgent
 	protected virtual void onNodeClickHandler(Node pNode)
 	{
 		//_target = pNode;
-		targetList.Add(pNode);
+		
+		if (targetList.Count != 0)
+        {
+			if(targetList[targetList.Count - 1].connections.Contains(pNode))
+            {
+				targetList.Add(pNode);
+				startNode = pNode;
+			}
+        }
+		else if (startNode.connections.Contains(pNode))
+        {
+			targetList.Add(pNode);
+			startNode = pNode;
+		}
 	}
 
 	protected override void Update()
@@ -41,15 +57,15 @@ class OnGraphWayPointAgent : NodeGraphAgent
 		}
 		
 
-        ////no target? Don't walk
-        //if (_target == null) return;
+		////no target? Don't walk
+		//if (_target == null) return;
 
-        ////Move towards the target node, if we reached it, clear the target
-        //if (moveTowardsNode(_target))
-        //{
-        //	_target = null;
-        //}
-    }
+		////Move towards the target node, if we reached it, clear the target
+		//if (moveTowardsNode(_target))
+		//{
+		//	_target = null;
+		//}
+	}
 
 	private void MoveToTarget(Node target)
     {
