@@ -63,7 +63,7 @@ class OnGraphWayPointAgent : NodeGraphAgent
 
         if (moveTowardsNode(target))
         {
-			i++;
+			targetList.RemoveAt(0);
         }
     }
 }
