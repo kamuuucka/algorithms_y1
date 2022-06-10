@@ -38,13 +38,13 @@ class OnGraphWayPointAgent : NodeGraphAgent
 			if(targetList[targetList.Count - 1].connections.Contains(pNode))
             {
 				targetList.Add(pNode);
-				startNode = pNode;
+				//startNode = pNode;
 			}
         }
 		else if (startNode.connections.Contains(pNode))
         {
 			targetList.Add(pNode);
-			startNode = pNode;
+			//startNode = pNode;
 		}
 	}
 
@@ -79,6 +79,7 @@ class OnGraphWayPointAgent : NodeGraphAgent
 
         if (moveTowardsNode(target))
         {
+			startNode = target;
 			targetList.RemoveAt(0);
         }
     }
