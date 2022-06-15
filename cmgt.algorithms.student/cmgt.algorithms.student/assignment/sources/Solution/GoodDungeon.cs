@@ -15,7 +15,7 @@ class GoodDungeon : Dungeon
     List<Room> roomListDoor = new List<Room>();
     List<Point> corners = new List<Point>();
     Random random = new Random();
-    static int seed = 6789;
+    static int seed = 0001;
     Random rand = new Random(seed);
     List<int> areas = new List<int>();
 
